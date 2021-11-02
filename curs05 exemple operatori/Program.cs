@@ -9,21 +9,23 @@ namespace curs05_exemple_operatori
             //PrintMessageIfExist("message1", "alt message 1");
             //PrintMessageIfExist(null, "alt message 1");
             //Print("text abc");
+            string userName = "Iosif";
+            string password = "Turcu";
+            Console.Write("Username: ");
+            string userInput = Console.ReadLine();
+            Console.Write("Password: ");
+            string passwordInput = Console.ReadLine();
 
-            Console.WriteLine("Te rog sa introduci un cuvant: ");
-            string cuvant = Console.ReadLine();
-            
-            for(int i = 0; i < cuvant.Length; i++)
+            while(userInput != userName || passwordInput != password)
             {
-                Console.Write(cuvant[i]+" ");
+                Console.WriteLine("Datele nu sunt corecte !!");
+                Console.Write("Username: ");
+                userInput = Console.ReadLine();
+                Console.Write("Password: ");
+                passwordInput = Console.ReadLine();
             }
             Console.WriteLine();
-            for (int i = cuvant.Length-1; i >= 0 ; i--)
-            {
-                Console.Write(cuvant[i] + " ");
-            }
-            Console.WriteLine();
-            Console.WriteLine($"Cuvantul introdus are: {cuvant.Length}");
+            Console.WriteLine($"Bine ai venit {userInput}");
         }
 
         static void PrintMessageIfExist(string message, string alternative)
