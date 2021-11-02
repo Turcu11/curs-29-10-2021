@@ -6,59 +6,24 @@ namespace curs05_exemple_operatori
     {
         static void Main(string[] args)
         {
-
             //PrintMessageIfExist("message1", "alt message 1");
             //PrintMessageIfExist(null, "alt message 1");
             //Print("text abc");
 
-            Console.Write("Buna ziua | login | sing up >> ");
-            string optiune = Console.ReadLine();
-            if (optiune == "login")
-            {   
-                Console.WriteLine("**********LOGARE**********");
-                Console.WriteLine("Numele utilizatorului: ");
-                Console.WriteLine("Parola: ");
-            }
-            else if(optiune == "sing up")
+            Console.WriteLine("Te rog sa introduci un cuvant: ");
+            string cuvant = Console.ReadLine();
+            
+            for(int i = 0; i < cuvant.Length; i++)
             {
-                Console.WriteLine("**********INREGISTRARE**********");
-                Console.WriteLine("Numele utilizatorului: ");
-                Console.WriteLine("Adresa de email: ");
-                Console.WriteLine("Creaza o parola: ");
-                Console.WriteLine("Confirmare parola: ");
-            }
-            else
-            {
-                Console.WriteLine("Eroare!! Nu ai introdus nici \"login\" nici \"sing up\"");
+                Console.Write(cuvant[i]+" ");
             }
             Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-
-            //de aici in colo este acelas lucru doar ca in loc de IF este SWITCH
-
-            Console.WriteLine("**********Si pentru instructinea SWICH**********");
-
-            Console.Write("Buna ziua | login | sing up >> ");
-            string optiune1 = Console.ReadLine();
-
-            switch (optiune1)
+            for (int i = cuvant.Length-1; i >= 0 ; i--)
             {
-                case "login":
-                    Console.WriteLine("**********LOGARE**********");
-                    Console.WriteLine("Numele utilizatorului: ");
-                    Console.WriteLine("Parola: ");
-                    break;
-                case "sing up":
-                    Console.WriteLine("**********INREGISTRARE**********");
-                    Console.WriteLine("Numele utilizatorului: ");
-                    Console.WriteLine("Adresa de email: ");
-                    Console.WriteLine("Creaza o parola: ");
-                    Console.WriteLine("Confirmare parola: ");
-                    break;
-
+                Console.Write(cuvant[i] + " ");
             }
-
+            Console.WriteLine();
+            Console.WriteLine($"Cuvantul introdus are: {cuvant.Length}");
         }
 
         static void PrintMessageIfExist(string message, string alternative)
